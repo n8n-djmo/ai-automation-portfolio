@@ -13,7 +13,7 @@ I build automation systems for service-based businesses that save time, eliminat
 
 ### Flagship Workflows — Complete Automated Client Lifecycle
 
-These four workflows work together as a complete automated client journey — from first website visit to appointment reminder — built as a single connected system or deployed individually.
+These four workflows each cover a different stage of the client journey — from first website visit to appointment reminder — and can be deployed individually or together.
 
 - [AI Website Chatbot](./case-study-ai-website-chatbot.md) | $300–1,500 setup | [Watch Demo](https://www.loom.com/share/ec9b6f61884247619d6efe7fa7bf5f97)
 - [Lead Capture + Nurture Sequence](./case-study-lead-capture-nurture-sequence.md) | $500–1,500 setup | [Watch Demo](https://www.loom.com/share/619addbded0f464b82ef0b88f9ee8458)

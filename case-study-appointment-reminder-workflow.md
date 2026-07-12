@@ -59,4 +59,4 @@ Delivered in 5–7 business days.
 
 ---
 
-*This workflow is also part of a complete automated client journey — from first website visit to appointment reminder — built as a single connected system.*
+*This workflow is also part of a complete client journey — from first website visit to appointment reminder — and can be paired with the other three flagship workflows.*

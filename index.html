@@ -151,7 +151,7 @@
     #ai-chat {
       height: 100vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 90px 5vw 30px;
+      padding: 80px 5vw 24px;
       position: relative; overflow: hidden;
       border-bottom: 1px solid var(--border);
     }
@@ -168,12 +168,16 @@
     .ai-chat-right { width: 100%; }
     .ai-chat-view-portfolio {
       position: relative; z-index: 1; margin-top: 1.4rem;
+      border: 1px solid rgba(255,255,255,0.5) !important;
+      padding: 0.85rem 2.2rem !important;
+      font-size: 0.95rem !important;
+      letter-spacing: 0.02em;
     }
     .chat-shell {
       width: 100%;
     }
     .chat-window {
-      max-height: 42vh; min-height: 60px; overflow-y: auto;
+      max-height: 54vh; min-height: 60px; overflow-y: auto;
       display: flex; flex-direction: column; gap: 0.7rem;
       margin-bottom: 1rem; padding-right: 0.3rem;
     }
@@ -561,7 +565,7 @@
       .ai-chat-left .hero-badge { margin-left: auto; margin-right: auto; }
       .ai-chat-left h1 { text-align: center; }
       .ai-chat-left .hero-sub { text-align: center; margin-left: auto; margin-right: auto; }
-      .chat-window { max-height: 32vh; }
+      .chat-window { max-height: 40vh; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo-frame { max-width: 280px; }
       h1 { font-size: 2.2rem; }

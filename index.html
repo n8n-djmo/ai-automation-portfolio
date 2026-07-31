@@ -146,6 +146,67 @@
       display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
       position: relative; z-index: 1;
     }
+
+    /* ── AI CHAT ── */
+    #ai-chat {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 130px 5vw 80px;
+      position: relative; overflow: hidden;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .chat-shell {
+      width: 100%; max-width: 640px; margin-top: 0.5rem;
+    }
+    .chat-window {
+      max-height: 320px; min-height: 60px; overflow-y: auto;
+      display: flex; flex-direction: column; gap: 0.7rem;
+      margin-bottom: 1rem; padding-right: 0.3rem;
+    }
+    .chat-bubble {
+      text-align: left; font-size: 0.92rem; line-height: 1.6;
+      padding: 0.8rem 1.1rem; border-radius: 12px; max-width: 85%;
+    }
+    .chat-bubble.user {
+      align-self: flex-end;
+      background: linear-gradient(120deg, var(--accent) 0%, var(--accent2) 100%);
+      color: #fff; border-bottom-right-radius: 3px;
+    }
+    .chat-bubble.bot {
+      align-self: flex-start;
+      background: var(--surface2); border: 1px solid var(--border2);
+      color: var(--black); border-bottom-left-radius: 3px;
+    }
+    .chat-bubble.bot.loading { color: var(--muted); font-style: italic; }
+    .chat-input-row {
+      display: flex; gap: 0.6rem;
+      background: var(--surface2); border: 1px solid var(--border2);
+      border-radius: 10px; padding: 0.5rem 0.5rem 0.5rem 1rem;
+    }
+    .chat-input-row input {
+      flex: 1; background: transparent; border: none; outline: none;
+      color: var(--black); font-family: var(--font-body); font-size: 0.95rem;
+    }
+    .chat-input-row input::placeholder { color: var(--muted2); }
+    .chat-input-row button {
+      background: var(--accent); color: #fff; border: none;
+      width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;
+      font-size: 1rem; cursor: pointer; transition: opacity .2s;
+    }
+    .chat-input-row button:hover { opacity: 0.88; }
+    .chat-input-row button:disabled { opacity: 0.5; cursor: default; }
+    .chat-suggestions {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
+      margin-top: 1.2rem;
+    }
+    .chat-suggest {
+      background: var(--surface2); border: 1px solid var(--border2);
+      color: var(--muted); font-size: 0.8rem; padding: 0.45rem 0.9rem;
+      border-radius: 99px; cursor: pointer; transition: all .2s;
+      font-family: var(--font-body);
+    }
+    .chat-suggest:hover { border-color: var(--accent); color: var(--black); }
     .btn-primary {
       background: var(--accent); color: #fff;
       padding: 0.85rem 2rem; border-radius: 8px;
@@ -508,6 +569,39 @@
   <a class="nav-cta" href="https://calendly.com/denmarjohnoropel/30min" target="_blank">Book a Free Call</a>
 </nav>
 
+<!-- AI ASSISTANT -->
+<section id="ai-chat">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-badge" style="position:relative;z-index:1;">
+    <span class="badge-dot"></span>
+    AI Assistant
+  </div>
+
+  <h1 style="position:relative;z-index:1;">Ask Anything About<br/><em>My Work.</em></h1>
+
+  <p class="hero-sub" style="position:relative;z-index:1;">
+    Type your question. The AI will answer from my portfolio and walk you through the details.
+  </p>
+
+  <div class="chat-shell" style="position:relative;z-index:1;">
+    <div class="chat-window" id="chatWindow"></div>
+    <div class="chat-input-row">
+      <input id="chatInput" type="text" placeholder="Ask about services, experience, tools..." autocomplete="off" />
+      <button id="chatSend" aria-label="Send">➤</button>
+    </div>
+    <div class="chat-suggestions" id="chatSuggestions">
+      <button class="chat-suggest">What services do you offer?</button>
+      <button class="chat-suggest">How much does this cost?</button>
+      <button class="chat-suggest">What tools do you use?</button>
+      <button class="chat-suggest">How can I reach you?</button>
+    </div>
+  </div>
+
+  <a href="#hero" class="btn-ghost" style="position:relative;z-index:1;margin-top:1.6rem;">View Portfolio ↓</a>
+</section>
+
 <!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
@@ -552,7 +646,7 @@
 <!-- PROBLEM -->
 <section id="problem">
   <div class="section-label">The Problem</div>
-  <h2>Most service businesses are<br/>losing time and leads every day.</h2>
+  <h2>Most businesses are<br/>losing time and leads every day.</h2>
   <p class="section-sub">The biggest missed opportunities aren't in your marketing — they're in the follow-up that never happens.</p>
 
   <div class="problem-grid fade-in">
@@ -842,7 +936,7 @@
     <div class="about-text">
       <div class="section-label">About</div>
       <h2>Engineer by training.<br/>Automator by obsession.</h2>
-      <p>I'm Denmar, a civil engineer from Cebu City, Philippines who discovered automation — and hasn't looked back. I build <strong>AI-powered n8n workflows</strong> for service-based businesses that eliminate the manual work eating up your time.</p>
+      <p>I'm Denmar, a civil engineer from Cebu City, Philippines who discovered automation — and hasn't looked back. I build <strong>AI-powered n8n workflows</strong> for service-based and e-commerce businesses that eliminate the manual work eating up your time.</p>
       <p>My engineering background means I approach every workflow the way I'd approach a structure: <strong>systematic, tested, and built to last</strong>. I don't just wire things together — I think through failure modes, error handling, and what happens at 3am when no one's watching.</p>
       <p>Every system I build comes with a full Loom walkthrough, connects to your existing tools, and runs 24/7 without your involvement.</p>
       <div class="about-stack">
@@ -928,6 +1022,75 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     });
   });
 });
+
+/* ── AI CHAT WIDGET ── */
+(function () {
+  const WEBHOOK_URL = 'https://venerable-coyote.pikapod.net/webhook/8d644944-69bf-4f85-8cb2-c16da6225cd8';
+
+  const chatWindow = document.getElementById('chatWindow');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  const suggestions = document.getElementById('chatSuggestions');
+
+  let conversationHistory = [];
+
+  function addBubble(text, role, isLoading) {
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-bubble ' + (role === 'user' ? 'user' : 'bot') + (isLoading ? ' loading' : '');
+    bubble.textContent = text;
+    chatWindow.appendChild(bubble);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+    return bubble;
+  }
+
+  async function sendMessage(message) {
+    if (!message.trim()) return;
+
+    suggestions.style.display = 'none';
+    addBubble(message, 'user');
+    chatInput.value = '';
+    chatInput.disabled = true;
+    chatSend.disabled = true;
+
+    const loadingBubble = addBubble('Thinking...', 'bot', true);
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: message,
+          conversation_history: conversationHistory
+        })
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      const replyText = await response.text();
+
+      loadingBubble.remove();
+      addBubble(replyText, 'bot');
+
+      conversationHistory.push({ role: 'user', content: message });
+      conversationHistory.push({ role: 'assistant', content: replyText });
+    } catch (err) {
+      loadingBubble.remove();
+      addBubble("Sorry, something went wrong on my end. Please email me directly at denmarjohnoropel@gmail.com or book a call at calendly.com/denmarjohnoropel/30min.", 'bot');
+    } finally {
+      chatInput.disabled = false;
+      chatSend.disabled = false;
+      chatInput.focus();
+    }
+  }
+
+  chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+  chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') sendMessage(chatInput.value);
+  });
+  suggestions.querySelectorAll('.chat-suggest').forEach(btn => {
+    btn.addEventListener('click', () => sendMessage(btn.textContent));
+  });
+})();
 </script>
 </body>
 </html>

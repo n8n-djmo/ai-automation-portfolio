@@ -149,18 +149,31 @@
 
     /* ── AI CHAT ── */
     #ai-chat {
-      min-height: 100vh;
+      height: 100vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 130px 5vw 80px;
+      padding: 90px 5vw 30px;
       position: relative; overflow: hidden;
-      text-align: center;
       border-bottom: 1px solid var(--border);
     }
+    .ai-chat-grid {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4vw;
+      align-items: center;
+    }
+    .ai-chat-left { text-align: left; }
+    .ai-chat-left .hero-badge { margin-left: 0; }
+    .ai-chat-left h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-top: 1.1rem; text-align: left; }
+    .ai-chat-left .hero-sub { text-align: left; margin-left: 0; max-width: 460px; }
+    .ai-chat-right { width: 100%; }
+    .ai-chat-view-portfolio {
+      position: relative; z-index: 1; margin-top: 1.4rem;
+    }
     .chat-shell {
-      width: 100%; max-width: 640px; margin-top: 0.5rem;
+      width: 100%;
     }
     .chat-window {
-      max-height: 320px; min-height: 60px; overflow-y: auto;
+      max-height: 42vh; min-height: 60px; overflow-y: auto;
       display: flex; flex-direction: column; gap: 0.7rem;
       margin-bottom: 1rem; padding-right: 0.3rem;
     }
@@ -542,6 +555,13 @@
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      #ai-chat { height: auto; min-height: 100vh; padding: 90px 6vw 40px; }
+      .ai-chat-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+      .ai-chat-left { text-align: center; }
+      .ai-chat-left .hero-badge { margin-left: auto; margin-right: auto; }
+      .ai-chat-left h1 { text-align: center; }
+      .ai-chat-left .hero-sub { text-align: center; margin-left: auto; margin-right: auto; }
+      .chat-window { max-height: 32vh; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo-frame { max-width: 280px; }
       h1 { font-size: 2.2rem; }
@@ -574,33 +594,40 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
 
-  <div class="hero-badge" style="position:relative;z-index:1;">
-    <span class="badge-dot"></span>
-    AI Assistant
+  <div class="ai-chat-grid">
+    <div class="ai-chat-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI Assistant
+      </div>
+
+      <h1>Ask Anything About<br/><em>My Work.</em></h1>
+
+      <p class="hero-sub">
+        Type your question. The AI will answer from my portfolio and walk you through the details.
+      </p>
+    </div>
+
+    <div class="ai-chat-right">
+      <div class="chat-shell">
+        <div class="chat-window" id="chatWindow"></div>
+        <div class="chat-input-row">
+          <input id="chatInput" type="text" placeholder="Ask about services, experience, tools..." autocomplete="off" />
+          <button id="chatSend" aria-label="Send">➤</button>
+        </div>
+        <div class="chat-suggestions" id="chatSuggestions">
+          <button class="chat-suggest">What services do you offer?</button>
+          <button class="chat-suggest">How much does this cost?</button>
+          <button class="chat-suggest">What tools do you use?</button>
+          <button class="chat-suggest">How can I reach you?</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h1 style="position:relative;z-index:1;">Ask Anything About<br/><em>My Work.</em></h1>
-
-  <p class="hero-sub" style="position:relative;z-index:1;">
-    Type your question. The AI will answer from my portfolio and walk you through the details.
-  </p>
-
-  <div class="chat-shell" style="position:relative;z-index:1;">
-    <div class="chat-window" id="chatWindow"></div>
-    <div class="chat-input-row">
-      <input id="chatInput" type="text" placeholder="Ask about services, experience, tools..." autocomplete="off" />
-      <button id="chatSend" aria-label="Send">➤</button>
-    </div>
-    <div class="chat-suggestions" id="chatSuggestions">
-      <button class="chat-suggest">What services do you offer?</button>
-      <button class="chat-suggest">How much does this cost?</button>
-      <button class="chat-suggest">What tools do you use?</button>
-      <button class="chat-suggest">How can I reach you?</button>
-    </div>
-  </div>
-
-  <a href="#hero" class="btn-ghost" style="position:relative;z-index:1;margin-top:1.6rem;">View Portfolio ↓</a>
+  <a href="#hero" class="btn-ghost ai-chat-view-portfolio">View Portfolio ↓</a>
 </section>
+
 
 <!-- HERO -->
 <section id="hero">

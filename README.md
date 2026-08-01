@@ -2,7 +2,7 @@
 
 **Denmar John Oropel — n8n + AI Automation Specialist**
 
-I build automation systems for service-based businesses that save time, eliminate manual work, and run 24/7 without anyone lifting a finger.
+I build automation systems for service-based and e-commerce businesses that save time, eliminate manual work, and run 24/7 without anyone lifting a finger.
 
 📧 [denmarjohnoropel@gmail.com](mailto:denmarjohnoropel@gmail.com)
 🌐 [View Portfolio Website](https://n8n-djmo.github.io/ai-automation-portfolio/)
@@ -112,7 +112,7 @@ Every Monday at 8am, pulls full inventory data and sends the business owner a pl
 
 ## Work With Me
 
-I build done-for-you AI automation systems for service-based businesses. Setup takes 5–7 days. Starter package from $500.
+I build done-for-you AI automation systems for service-based and e-commerce/product-based businesses. Setup takes 5–7 days. Starter package from $500.
 
 🌐 [View Portfolio & Book a Discovery Call](https://n8n-djmo.github.io/ai-automation-portfolio/)
 
